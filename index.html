@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Whats Is My IP by Fajriyan" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://avatars.githubusercontent.com/u/56616688?v=4"
+    />
+    <link rel="canonical" href="/" />
+    <title>Whats My IP</title>
+  </head>
+  <body
+    x-data="{
+            ip:[],
+            isLoading: true,
+
+            getIP(){
+              fetch('http://ip-api.com/json/')
+                .then((response) => response.json())
+                .then((json) => {
+                  this.isLoading = false;
+                  this.ip = json;
+                });
+            },
+          }"
+    x-init="isLoading = true, getIP()"
+  >
+    <div class="h-full bg-violet-50 p-4">
+      <div class="bg-white rounded-lg shadow-xl pb-8">
+        <div
+          x-data="{ openSettings: false }"
+          class="absolute right-12 mt-4 rounded"
+        >
+          <button
+            @click="openSettings = !openSettings"
+            class="border border-gray-400 p-2 rounded text-gray-300 hover:text-gray-300 bg-gray-100 bg-opacity-10 hover:bg-opacity-20"
+            title="Settings"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              ></path>
+            </svg>
+          </button>
+          <div
+            x-show="openSettings"
+            @click.away="openSettings = false"
+            class="bg-white absolute right-0 w-40 py-1 mt-1 border border-gray-200 shadow-2xl rounded-xl"
+            style="display: none"
+          >
+            <div class="py-2 border-b">
+              <p class="text-gray-400 text-xs px-6 uppercase mb-1">More Info</p>
+              <a
+                href="https://fajriyan.pages.dev/"
+                class="w-full flex items-center px-6 py-1.5 space-x-2 hover:bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-person-workspace"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+                  />
+                  <path
+                    d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"
+                  />
+                </svg>
+                <span class="text-sm text-gray-700">My Portfolio</span>
+              </a>
+              <a
+                href="https://github.com/fajriyan"
+                class="w-full flex items-center py-1.5 px-6 space-x-2 hover:bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-github"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                  />
+                </svg>
+                <span class="text-sm text-gray-700">Follow Me</span>
+              </a>
+            </div>
+            <div class="py-2">
+              <p class="text-gray-400 text-xs px-6 uppercase mb-1">Feedback</p>
+              <button
+                class="w-full flex items-center py-1.5 px-6 space-x-2 hover:bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-exclamation-triangle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"
+                  />
+                  <path
+                    d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"
+                  />
+                </svg>
+                <span class="text-sm text-gray-700">Report</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full h-[250px]">
+          <img
+            src="https://images.unsplash.com/photo-1655720406770-12ea329b5b61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80"
+            class="w-full object-cover h-full rounded-tl-lg rounded-tr-lg"
+            alt="Image Background"
+            height="100"
+            width="100"
+          />
+        </div>
+
+        <!-- /////////////// DATA /////////////////////// -->
+
+        <div class="flex flex-col items-center -mt-10">
+          <div
+            class="px-5 py-2 border-4 border-white rounded-xl backdrop-blur-xl bg-white/70 text-1xl lg:text-5xl font-semibold"
+          >
+            <div x-show="isLoading">
+              <div class="animate-pulse flex space-x-4">
+                <div
+                  class="rounded-xl bg-sky-300 bg-opacity-30 h-[48px] w-[312px]"
+                ></div>
+              </div>
+            </div>
+            <span x-text="ip.query"></span>
+          </div>
+
+          <!-- Start Skeleton -->
+
+          <div class="flex flex-col items-center" x-show="isLoading">
+            <div class="flex items-center space-x-2 mt-2">
+              <span class="bg-blue-500 rounded-full p-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  fill="white"
+                  class="bi bi-geo-alt-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                  />
+                </svg>
+              </span>
+              <div class="flex text-xl">
+                <div>Loading</div>
+                <p x-show="isLoading">, &nbsp;</p>
+                <p class="font-semibold">Loading</p>
+              </div>
+            </div>
+            <div class="flex">
+              <p class="text-gray-700">Company</p>
+              <pre> - </pre>
+              <p class="text-gray-700">ISP Internet</p>
+            </div>
+            <!-- <p class="text-gray-700">Myrepublic - PT. Eka Mas Republik</p> -->
+            <p class="text-sm text-gray-500">
+              Time Zone : Loading Time Zone ..
+            </p>
+          </div>
+          <!-- End Skeleton -->
+
+          <!-- Start Description -->
+          <template x-if="!isLoading">
+            <div class="flex flex-col items-center">
+              <div class="flex items-center space-x-2 mt-2">
+                <span class="bg-blue-500 rounded-full p-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    fill="white"
+                    class="bi bi-geo-alt-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                    />
+                  </svg>
+                </span>
+                <div class="flex text-xl">
+                  <div x-text="ip.city"></div>
+                  <p x-show="!isLoading">, &nbsp;</p>
+                  <p class="font-semibold" x-text="ip.country"></p>
+                </div>
+              </div>
+              <div class="flex">
+                <p class="text-gray-700" x-text="ip.org"></p>
+                <pre> - </pre>
+                <p class="text-gray-700" x-text="ip.isp"></p>
+              </div>
+              <!-- <p class="text-gray-700">Myrepublic - PT. Eka Mas Republik</p> -->
+              <p class="text-sm text-gray-500">
+                Time Zone : <span x-text="ip.timezone"></span>
+              </p>
+            </div>
+          </template>
+          <!-- End Description -->
+        </div>
+        <div
+          class="flex-1 flex flex-col items-center lg:items-end justify-end px-8 mt-2"
+        >
+          <div class="flex items-center space-x-4 mt-2">
+            <a
+              href="https://www.linkedin.com/in/fajriyan/"
+              class="flex items-center bg-blue-600 hover:bg-blue-700 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-linkedin"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                />
+              </svg>
+              <span>Message</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="my-4 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4"
+      >
+        <div class="w-full flex flex-col 2xl:w-1/3">
+          <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
+            <h1 class="text-xl text-gray-900 font-bold">
+              More Info About Your IP
+            </h1>
+            <ul class="mt-2 text-gray-700">
+              <li class="flex border-y py-2">
+                <span class="font-bold w-[9%]">IP Address</span>
+                <span class="text-gray-700" x-text="ip.query"></span>
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Status Test</span>
+                <span
+                  class="text-gray-700 capitalize bg-green-200 px-2 rounded-md"
+                  x-text="ip.status"
+                ></span>
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">ISP</span>
+                <span class="text-gray-700" x-text="ip.isp"></span>
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Organization</span>
+                <span class="text-gray-700" x-text="ip.org"></span>&nbsp; (<span
+                  x-text="ip.as"
+                ></span
+                >)
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Region</span>
+                <span class="text-gray-700" x-text="ip.region"></span>
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">City</span>
+                <span class="text-gray-700" x-text="ip.city"></span>
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Province</span>
+                <span class="text-gray-700" x-text="ip.regionName"></span>
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Country</span>
+                <span class="text-gray-700" x-text="ip.country"></span>&nbsp;
+                (<span class="text-gray-700" x-text="ip.countryCode"></span>)
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Time Zone</span>
+                <span class="text-gray-700" x-text="ip.timezone"></span>
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Lat & Lon</span>
+                <span class="text-gray-700" x-text="ip.lat"></span>,
+                <span class="text-gray-700" x-text="ip.lon"></span>
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Zip Code</span>
+                <span class="text-gray-700" x-text="ip.zip"></span>
+                <template x-if="!ip.zip">
+                  <div>Not Found</div>
+                </template>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col w-full 2xl:w-2/3">
+          <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-xl text-gray-900 font-bold">About</h2>
+            <p class="mt-2 text-gray-700">
+              MYIP adalah sebuah project Pribadi berupa Landing Page dengan
+              Menggunakan ✨Alphine JS dan 🍃Tailwind CSS yang digunakan untuk
+              Melihat IP Public yang sedang digunakan serta Informasi
+              didalamnya. Website ini menggunakan Public API Milik IP-API.COM
+              yang memberikan data mengenai IP yang digunakan saat ini. Project
+              ini memiliki tujuan sebagai
+              <a
+                class="text-blue-500 hover:text-blue-800 underline"
+                href="https://fajriyan.pages.dev/"
+                >📚Portfolio</a
+              >
+              saya sendiri yang bebas digunakan siapapun di
+              <a
+                class="text-blue-500 hover:text-blue-800 underline"
+                href="https://github.com/fajriyan"
+                >👩‍💻github/fajriyan</a
+              >. Terimakasih semoga Bermanfaat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-xl p-8">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl text-gray-900 font-bold">Contributor (1)</h2>
+        </div>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-8 mt-8"
+        >
+          <a
+            href="https://github.com/fajriyan"
+            class="flex flex-col items-center justify-center text-gray-800 hover:text-blue-600"
+            title="View Profile"
+          >
+            <img
+              src="https://avatars.githubusercontent.com/u/56616688?v=4"
+              class="w-16 rounded-full"
+              alt="Fajriyan Profil"
+              height="100"
+              width="100"
+            />
+            <p class="text-center font-bold text-sm mt-1">Fajriyan</p>
+            <p class="text-xs text-gray-500 text-center">Web Developer</p>
+          </a>
+        </div>
+      </div>
+      <div class="mt-7 text-sm text-slate-900">
+        <p>Build with ✨AlphineJS by fajriyan</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
