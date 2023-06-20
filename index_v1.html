@@ -18,28 +18,14 @@
   <body
     x-data="{
             ip:[],
-            roaming:[],
-            dgeoloc:[],
             isLoading: true,
 
             getIP(){
-              fetch('https://api-bdc.net/data/client-ip')
+              fetch('http://ip-api.com/json/')
                 .then((response) => response.json())
                 .then((json) => {
                   this.isLoading = false;
                   this.ip = json;
-                });
-              fetch('https://api-bdc.net/data/am-i-roaming')
-                .then((response2) => response2.json())
-                .then((json) => {
-                  this.isLoading = false;
-                  this.roaming = json;
-                });
-              fetch('https://api-bdc.net/data/ip-geolocation?ip=&localityLanguage=en&key=bdc_8a969e174ac44b22a6187864be36883c')
-                .then((geoloc) => geoloc.json())
-                .then((json) => {
-                  this.isLoading = false;
-                  this.dgeoloc = json;
                 });
             },
           }"
@@ -168,7 +154,7 @@
                 ></div>
               </div>
             </div>
-            <span x-text="ip.ipString"></span>
+            <span x-text="ip.query"></span>
           </div>
 
           <!-- Start Skeleton -->
@@ -226,26 +212,19 @@
                   </svg>
                 </span>
                 <div class="flex text-xl">
-                  <div x-text="dgeoloc?.location?.city"></div>
+                  <div x-text="ip.city"></div>
                   <p x-show="!isLoading">, &nbsp;</p>
-                  <p class="font-semibold" x-text="dgeoloc?.country?.name"></p>
+                  <p class="font-semibold" x-text="ip.country"></p>
                 </div>
-              </div>  
+              </div>
               <div class="flex">
-                <p
-                  class="text-gray-700"
-                  x-text="dgeoloc?.network?.carriers[0]?.name"
-                ></p>
+                <p class="text-gray-700" x-text="ip.org"></p>
                 <pre> - </pre>
-                <p
-                  class="text-gray-700"
-                  x-text="dgeoloc?.network?.carriers[0]?.asn"
-                ></p>
+                <p class="text-gray-700" x-text="ip.isp"></p>
               </div>
               <!-- <p class="text-gray-700">Myrepublic - PT. Eka Mas Republik</p> -->
               <p class="text-sm text-gray-500">
-                Time Zone :
-                <span x-text="dgeoloc?.location?.timeZone?.ianaTimeId"></span>
+                Time Zone : <span x-text="ip.timezone"></span>
               </p>
             </div>
           </template>
@@ -288,13 +267,13 @@
             <ul class="mt-2 text-gray-700">
               <li class="flex border-y py-2">
                 <span class="font-bold w-[9%]">IP Address</span>
-                <span class="text-gray-700" x-text="ip.ipString"></span>
+                <span class="text-gray-700" x-text="ip.query"></span>
               </li>
               <li class="flex border-b py-2">
-                <span class="font-bold w-[9%]">Roaming</span>
+                <span class="font-bold w-[9%]">Status Test</span>
                 <span
                   class="text-gray-700 capitalize bg-green-200 px-2 rounded-md"
-                  x-text="roaming.isRoaming"
+                  x-text="ip.status"
                 ></span>
               </li>
               <li class="flex border-b py-2">
