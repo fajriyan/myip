@@ -35,7 +35,7 @@
                   this.isLoading = false;
                   this.roaming = json;
                 });
-              fetch('https://api-bdc.net/data/ip-geolocation?ip=&localityLanguage=en&key=bdc_8a969e174ac44b22a6187864be36883c')
+              fetch('https://api-bdc.net/data/ip-geolocation?ip=&localityLanguage=en&key=')
                 .then((geoloc) => geoloc.json())
                 .then((json) => {
                   this.isLoading = false;
@@ -230,7 +230,7 @@
                   <p x-show="!isLoading">, &nbsp;</p>
                   <p class="font-semibold" x-text="dgeoloc?.country?.name"></p>
                 </div>
-              </div>  
+              </div>
               <div class="flex">
                 <p
                   class="text-gray-700"
