@@ -17,25 +17,18 @@
   </head>
   <body
     x-data="{
-            ip:[],
-            roaming:[],
+            droaming:[],
             dgeoloc:[],
             isLoading: true,
 
             getIP(){
-              fetch('https://api-bdc.net/data/client-ip')
-                .then((response) => response.json())
-                .then((json) => {
-                  this.isLoading = false;
-                  this.ip = json;
-                });
               fetch('https://api-bdc.net/data/am-i-roaming')
-                .then((response2) => response2.json())
+                .then((roaming) => roaming.json())
                 .then((json) => {
                   this.isLoading = false;
-                  this.roaming = json;
+                  this.droaming = json;
                 });
-              fetch('https://api-bdc.net/data/ip-geolocation?ip=&localityLanguage=en&key=')
+              fetch('https://api-bdc.net/data/ip-geolocation?ip=&localityLanguage=en&key=bdc_8a969e174ac44b22a6187864be36883c')
                 .then((geoloc) => geoloc.json())
                 .then((json) => {
                   this.isLoading = false;
@@ -168,7 +161,7 @@
                 ></div>
               </div>
             </div>
-            <span x-text="ip.ipString"></span>
+            <span x-text="dgeoloc.ip"></span>
           </div>
 
           <!-- Start Skeleton -->
@@ -288,56 +281,127 @@
             <ul class="mt-2 text-gray-700">
               <li class="flex border-y py-2">
                 <span class="font-bold w-[9%]">IP Address</span>
-                <span class="text-gray-700" x-text="ip.ipString"></span>
+                <span class="text-gray-700" x-text="dgeoloc.ip"></span>
+              </li>
+              <li class="flex border-y py-2">
+                <span class="font-bold w-[9%]">All IP</span>
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc.network?.bgpPrefix"
+                ></span
+                >&nbsp; (<span
+                  class="text-gray-700"
+                  x-text="dgeoloc.network?.bgpPrefixNetworkAddress"
+                ></span
+                >&nbsp;-&nbsp;
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc.network?.bgpPrefixLastAddress"
+                ></span
+                >)
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Total Address</span>
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc?.network?.totalAddresses"
+                ></span>
               </li>
               <li class="flex border-b py-2">
                 <span class="font-bold w-[9%]">Roaming</span>
                 <span
                   class="text-gray-700 capitalize bg-green-200 px-2 rounded-md"
-                  x-text="roaming.isRoaming"
+                  x-text="droaming.isRoaming"
+                ></span>
+              </li>
+              <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Registry</span>
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc?.network?.registry"
                 ></span>
               </li>
               <li class="flex border-b py-2">
                 <span class="font-bold w-[9%]">ISP</span>
-                <span class="text-gray-700" x-text="ip.isp"></span>
-              </li>
-              <li class="flex border-b py-2">
-                <span class="font-bold w-[9%]">Organization</span>
-                <span class="text-gray-700" x-text="ip.org"></span>&nbsp; (<span
-                  x-text="ip.as"
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc?.network?.carriers[0]?.name"
+                ></span
+                >&nbsp; (<span
+                  class="text-gray-700"
+                  x-text="dgeoloc?.network?.carriers[0]?.asn"
                 ></span
                 >)
               </li>
               <li class="flex border-b py-2">
+                <span class="font-bold w-[9%]">Organization</span>
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc?.network?.organisation"
+                ></span
+                >&nbsp; (<span x-text="ip.as"></span>)
+              </li>
+              <li class="flex border-b py-2">
                 <span class="font-bold w-[9%]">Region</span>
-                <span class="text-gray-700" x-text="ip.region"></span>
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc.country.unRegion"
+                ></span>
               </li>
               <li class="flex border-b py-2">
                 <span class="font-bold w-[9%]">City</span>
-                <span class="text-gray-700" x-text="ip.city"></span>
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc.location.localityName"
+                ></span
+                >,&nbsp;
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc.location.city"
+                ></span>
               </li>
               <li class="flex border-b py-2">
                 <span class="font-bold w-[9%]">Province</span>
-                <span class="text-gray-700" x-text="ip.regionName"></span>
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc.location.principalSubdivision"
+                ></span>
               </li>
               <li class="flex border-b py-2">
                 <span class="font-bold w-[9%]">Country</span>
-                <span class="text-gray-700" x-text="ip.country"></span>&nbsp;
-                (<span class="text-gray-700" x-text="ip.countryCode"></span>)
+                <span class="text-gray-700" x-text="dgeoloc.country.name"></span
+                >&nbsp; (<span
+                  class="text-gray-700"
+                  x-text="dgeoloc.country.isoAlpha3"
+                ></span
+                >)
               </li>
               <li class="flex border-b py-2">
                 <span class="font-bold w-[9%]">Time Zone</span>
-                <span class="text-gray-700" x-text="ip.timezone"></span>
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc?.location?.timeZone?.ianaTimeId"
+                ></span>
               </li>
               <li class="flex border-b py-2">
                 <span class="font-bold w-[9%]">Lat & Lon</span>
-                <span class="text-gray-700" x-text="ip.lat"></span>,
-                <span class="text-gray-700" x-text="ip.lon"></span>
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc.location.latitude"
+                ></span
+                >,
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc.location.longitude"
+                ></span>
               </li>
               <li class="flex border-b py-2">
                 <span class="font-bold w-[9%]">Zip Code</span>
-                <span class="text-gray-700" x-text="ip.zip"></span>
-                <template x-if="!ip.zip">
+                <span
+                  class="text-gray-700"
+                  x-text="dgeoloc?.location?.postcode"
+                ></span>
+                <template x-if="!dgeoloc?.location?.postcode">
                   <div>Not Found</div>
                 </template>
               </li>
@@ -351,7 +415,8 @@
               MYIP adalah sebuah project Pribadi berupa Landing Page dengan
               Menggunakan ✨Alphine JS dan 🍃Tailwind CSS yang digunakan untuk
               Melihat IP Public yang sedang digunakan serta Informasi
-              didalamnya. Website ini menggunakan Public API Milik IP-API.COM
+              didalamnya. Website ini menggunakan API Milik
+              <i>bigdatacloud.com</i>
               yang memberikan data mengenai IP yang digunakan saat ini. Project
               ini memiliki tujuan sebagai
               <a
