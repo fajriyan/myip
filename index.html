@@ -7,7 +7,7 @@
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
     /> -->
-    <link rel="icon" type="image/x-icon" href="Favicon.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
     <link rel="canonical" href="/" />
     <title>Whats My IP</title>
   </head>
@@ -36,6 +36,7 @@
   >
     <div class="h-full bg-violet-50 p-4">
       <div class="bg-white rounded-lg shadow-xl pb-8">
+        <!-- Start Mini Popup -->
         <div
           x-data="{ openSettings: false }"
           class="absolute right-12 mt-4 rounded"
@@ -110,7 +111,10 @@
             </div>
             <div class="py-2">
               <p class="text-gray-400 text-xs px-6 uppercase mb-1">Feedback</p>
-              <button
+              <a
+                href="https://github.com/fajriyan/myip/issues/new"
+                target="_blank"
+                rel="nofollow"
                 class="w-full flex items-center py-1.5 px-6 space-x-2 hover:bg-gray-200"
               >
                 <svg
@@ -129,11 +133,11 @@
                   />
                 </svg>
                 <span class="text-sm text-gray-700">Report</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
-
+        <!-- End Mini Popup  -->
         <div class="w-full h-[250px]">
           <img
             src="https://images.unsplash.com/photo-1655720406770-12ea329b5b61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80"
@@ -144,7 +148,7 @@
           />
         </div>
 
-        <!-- /////////////// DATA /////////////////////// -->
+        <!-- ------------------ DATA ------------------ -->
 
         <div class="flex flex-col items-center -mt-10">
           <div
@@ -161,7 +165,6 @@
           </div>
 
           <!-- Start Skeleton -->
-
           <div class="flex flex-col items-center" x-show="isLoading">
             <div class="flex items-center space-x-2 mt-2">
               <span class="bg-blue-500 rounded-full p-1">
