@@ -567,6 +567,18 @@ video {
   margin-top: 2rem;
 }
 
+.-mt-16 {
+  margin-top: -4rem;
+}
+
+.-mt-14 {
+  margin-top: -3.5rem;
+}
+
+.-mt-12 {
+  margin-top: -3rem;
+}
+
 .flex {
   display: flex;
 }
@@ -591,6 +603,14 @@ video {
   height: 100%;
 }
 
+.h-\[150px\] {
+  height: 150px;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -613,6 +633,30 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[3312px\] {
+  width: 3312px;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[500px\] {
+  width: 500px;
+}
+
+.w-\[400px\] {
+  width: 400px;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .flex-1 {
@@ -778,6 +822,21 @@ video {
   background-color: rgb(255 255 255 / 0.7);
 }
 
+.bg-violet-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+}
+
+.bg-violet-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(196 181 253 / var(--tw-bg-opacity));
+}
+
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-10 {
   --tw-bg-opacity: 0.1;
 }
@@ -851,6 +910,10 @@ video {
   padding-bottom: 2rem;
 }
 
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -868,6 +931,16 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -1007,12 +1080,57 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:-mt-10 {
+    margin-top: -2.5rem;
+  }
+
+  .lg\:h-\[250px\] {
+    height: 250px;
+  }
+
+  .lg\:w-\[312px\] {
+    width: 312px;
+  }
+
+  .lg\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .lg\:w-\[3120px\] {
+    width: 3120px;
+  }
+
+  .lg\:w-\[500px\] {
+    width: 500px;
+  }
+
+  .lg\:w-\[5450px\] {
+    width: 5450px;
+  }
+
+  .lg\:w-\[450px\] {
+    width: 450px;
+  }
+
+  .lg\:w-\[430px\] {
+    width: 430px;
+  }
+
+  .lg\:w-\[400px\] {
+    width: 400px;
+  }
+
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .lg\:items-end {
     align-items: flex-end;
+  }
+
+  .lg\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .lg\:text-5xl {

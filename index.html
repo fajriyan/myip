@@ -8,7 +8,7 @@
       content="upgrade-insecure-requests"
     /> -->
     <link rel="stylesheet" href="output.css" />
-    <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/src/favicon.png" />
     <link rel="canonical" href="/" />
     <meta
       name="google-site-verification"
@@ -39,7 +39,7 @@
           }"
     x-init="isLoading = true, getIP()"
   >
-    <div class="h-full bg-violet-50 p-4">
+    <div class="bg-violet-300 p-4">
       <div class="bg-white rounded-lg shadow-xl pb-8">
         <!-- Start Mini Popup -->
         <div
@@ -143,7 +143,7 @@
           </div>
         </div>
         <!-- End Mini Popup  -->
-        <div class="w-full h-[250px]">
+        <div class="h-[200px] lg:h-[250px]">
           <img
             src="https://images.unsplash.com/photo-1655720406770-12ea329b5b61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80"
             class="w-full object-cover h-full rounded-tl-lg rounded-tr-lg"
@@ -155,14 +155,14 @@
 
         <!-- ------------------ DATA ------------------ -->
 
-        <div class="flex flex-col items-center -mt-10">
+        <div class="flex flex-col items-center -mt-10 lg:-mt-10">
           <div
-            class="px-5 py-2 border-4 border-white rounded-xl backdrop-blur-xl bg-white/70 text-1xl lg:text-5xl font-semibold"
+            class="px-5 py-2 border-4 border-white rounded-xl backdrop-blur-xl bg-white/70 text-1xl text-3xl lg:text-5xl font-semibold w-[300px] lg:w-[400px] text-center"
           >
             <div x-show="isLoading">
               <div class="animate-pulse flex space-x-4">
                 <div
-                  class="rounded-xl bg-sky-300 bg-opacity-30 h-[48px] w-[312px]"
+                  class="rounded-xl bg-sky-300 bg-opacity-30 h-[48px] lg:w-[312px]"
                 ></div>
               </div>
             </div>
