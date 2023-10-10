@@ -10,7 +10,8 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 [![Badges](https://img.shields.io/github/package-json/v/fajriyan/myip?label=package.json%20v.&style=social)]()
 [![Badges](https://img.shields.io/npm/l/react?style=social)]()
 
-
+## Next Update
+- [ ] try use astro
 
 ## How to run it
 
