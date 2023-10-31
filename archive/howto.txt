@@ -1,5 +1,0 @@
-#Package
-./package.json
-
-#Run TailwindCSS 
-npx tailwindcss -i ./src/input.css -o ./output.css --watch
