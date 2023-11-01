@@ -10,7 +10,8 @@
   },
   "author": "Fajriyan",
   "dependencies": {
-    "solid-js": "^1.7.8"
+    "solid-js": "^1.7.8",
+    "solid-start-cloudflare-pages": "^0.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
