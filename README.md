@@ -11,7 +11,7 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 [![Badges](https://img.shields.io/npm/l/react?style=social)]()
 
 ## Next Update
-- [ ] try use astro
+- [x] try use solid js
 
 ## How to run it
 
