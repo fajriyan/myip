@@ -13,6 +13,11 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 ## Next Update
 - [x] try use solid js [Hold]
 
+
+
+## Issue
+- [ ] Public API Broken
+
 ## How to run it
 
 Untuk menjalankan project ini kalian bisa melakukan dengan 2 cara, sebagai berikut : 
