@@ -12,6 +12,7 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 
 ## Next Update
 - [x] try use solid js [Hold]
+- [ ] use react query 
 
 
 
