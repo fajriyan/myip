@@ -1,7 +1,17 @@
 import { defineConfig } from "vite";
-import solid from "vite-plugin-solid";
-import cloudflare from "solid-start-cloudflare-pages";
+import reactRefresh from "@vitejs/plugin-react";
+import svgrPlugin from "vite-plugin-svgr";
 
 export default defineConfig({
-  plugins: [solid({ adapter: cloudflare({}) })],
+  build: {
+    outDir: "build",
+  },
+  plugins: [
+    reactRefresh(),
+    svgrPlugin({
+      svgrOptions: {
+        icon: true,
+      },
+    }),
+  ],
 });
