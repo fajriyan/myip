@@ -19,8 +19,8 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 
 ## Issue
 - [ ] Public API Broken
-- [ ] conflict library
-- [ ] error deployment
+- [x] conflict library
+- [x] error deployment
 
 ## How to run it
 
