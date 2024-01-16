@@ -6,16 +6,17 @@ const App = () => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
-    const request = await fetch(import.meta.env.VITE_BASE_URL);
+    const request = await fetch(
+      import.meta.env.VITE_URL + import.meta.env.VITE_GHOST
+    );
     const response = await request.json();
     setData(response);
-    return response;
   };
 
   useEffect(() => {
     getData();
   }, []);
-
+  console.log(data);
   return (
     <>
       <div className="min-h-screen bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-violet-900 via-indigo-950 to-slate-900">
