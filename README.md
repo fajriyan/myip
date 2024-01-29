@@ -1,6 +1,6 @@
 # #3 Project IPVIEW/ MYIP
 
-Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (TailwindCSS) dan Library JS (Alpine JS) yang berguna untuk menampilkan IP dan Informasi didalamnya.
+Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (TailwindCSS) dan Library JS (React JS) yang berguna untuk menampilkan IP dan Informasi didalamnya.
 
 
 [![Build](https://img.shields.io/github/followers/fajriyan?label=Follow%20Me&style=social)](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffajriyan)
@@ -38,13 +38,8 @@ Kalian bisa melihat hasil web secara online [disini](https://ipview.pages.dev/).
 3. Lakukan Edit Sesuka kalian.
 
 ## Screenshot
-- Hero Section 
-![image](https://github.com/fajriyan/myip/assets/56616688/07ffc246-f649-4930-99a0-89755e4a8872)
-- Information  
-![image](https://github.com/fajriyan/myip/assets/56616688/ed6aa597-eb4b-480e-92c8-a78639d7784e)
-- About
-![image](https://github.com/fajriyan/myip/assets/56616688/fea6584e-df83-4681-80f0-170b754df95b)
-
+- Homepage
+  ![image](https://github.com/fajriyan/myip/assets/56616688/875b9afe-0678-4783-ae7f-22fdc7c7ac0d)
 
 ## Support
 Project ini tentunya tidak lepas dari berbagai pihak yang telah membantu, oleh karena itu saya menyampaikan banyak 🙏Terimakasih kepada semua pihak yang sudah mendukung project ini sampai live.
