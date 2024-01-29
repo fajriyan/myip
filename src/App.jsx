@@ -1,5 +1,3 @@
-// const axios = require("axios");
-
 import { useEffect, useState } from "react";
 
 const App = () => {
@@ -16,7 +14,6 @@ const App = () => {
   useEffect(() => {
     getData();
   }, []);
-  // console.log(data);
   return (
     <>
       <div className="min-h-screen bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-violet-900 via-indigo-950 to-slate-900">
@@ -204,6 +201,44 @@ const App = () => {
                   </tbody>
                 </table>
               </div>
+            </div>
+          </div>
+
+          <div className="mt-5 bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-md overflow-hidden p-4">
+            <p className="text-sm">
+              Jika kalian terbantu dengan project ini tolong dukung dengan
+              memberi stars di github.
+            </p>
+            <div className="flex mt-2 gap-2">
+              <a
+                className="github-button"
+                href="https://github.com/fajriyan/myip"
+                data-color-scheme="no-preference: dark; light: dark_high_contrast; dark: dark_dimmed;"
+                data-icon="octicon-star"
+                data-size="large"
+                aria-label="Star fajriyan/myip on GitHub"
+              >
+                Star
+              </a>
+              <a
+                className="github-button"
+                href="https://github.com/fajriyan"
+                data-color-scheme="no-preference: dark; light: dark_high_contrast; dark: dark_dimmed;"
+                data-size="large"
+                aria-label="Follow @fajriyan on GitHub"
+              >
+                Follow @fajriyan
+              </a>
+              <a
+                class="github-button"
+                href="https://github.com/fajriyan/myip/issues"
+                data-color-scheme="no-preference: dark; light: dark_high_contrast; dark: dark_dimmed;"
+                data-icon="octicon-issue-opened"
+                data-size="large"
+                aria-label="Issue fajriyan/myip on GitHub"
+              >
+                Issue
+              </a>
             </div>
           </div>
         </div>
