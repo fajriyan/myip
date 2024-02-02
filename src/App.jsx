@@ -60,65 +60,64 @@ const App = () => {
           <div className="mt-5 bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg flex rounded-md overflow-hidden p-4">
             <div className="w-full">
               <h2 className="font-semibold text-lg">Operator yg dipakai</h2>
-              <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-purple-700 text-sm">
-                  <thead class="text-left">
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-purple-700 text-sm">
+                  <thead className="text-left">
                     <tr>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         asn & numeric
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         organisation
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         name
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         registry
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         registered country
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         total Ipv4
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         rank
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         rank Text
                       </th>
                     </tr>
                   </thead>
-
-                  <tbody class="divide-y divide-purple-500">
+                  <tbody className="divide-y divide-purple-500">
                     <>
                       <tr>
-                        <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                           {data.network?.carriers?.[0].asn || "undefined"}
                         </td>
-                        <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                           {data.network?.carriers?.[0].organisation ||
                             "undefined"}
                         </td>
-                        <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                           {data.network?.carriers?.[0].name || "undefined"}
                         </td>
-                        <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                           {data.network?.carriers?.[0].registry || "undefined"}
                         </td>
-                        <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                           {data.network?.carriers?.[0].registeredCountryName ||
                             "undefined"}
                         </td>
-                        <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                           {data.network?.carriers?.[0].totalIpv4Addresses ||
                             "undefined"}
                         </td>
-                        <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                           {data.network?.carriers?.[0].rank || "undefined"}
                         </td>
-                        <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                           {data.network?.carriers?.[0].rankText || "undefined"}
                         </td>
                       </tr>
@@ -127,76 +126,74 @@ const App = () => {
                 </table>
               </div>
               <h2 className="font-semibold text-lg mt-4">Jalur Operator</h2>
-              <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-purple-700 text-sm">
-                  <thead class="text-left">
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-purple-700 text-sm">
+                  <thead className="text-left">
                     <tr>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         no
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         asn & numeric
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         organisation
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         name
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         registry
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         registered country
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         total Ipv4
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         rank
                       </th>
-                      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         rank Text
                       </th>
                     </tr>
                   </thead>
 
-                  <tbody class="divide-y divide-purple-500">
+                  <tbody className="divide-y divide-purple-500">
                     {data.network?.viaCarriers.map((vca, index) => (
-                      <>
-                        <tr>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-900">
-                            {index + 1}
-                          </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                            {vca.asn + " | " + vca.asnNumeric}
-                          </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                            {vca.organisation}
-                          </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                            {vca.name}
-                          </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                            {vca.registry}
-                          </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                            {vca.registeredCountryName +
-                              " (" +
-                              vca.registeredCountry +
-                              ")"}
-                          </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                            {vca.totalIpv4Addresses}
-                          </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                            {vca.rank}
-                          </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                            {vca.rankText}
-                          </td>
-                        </tr>
-                      </>
+                      <tr key={Math.random(20)}>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-900">
+                          {index + 1}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                          {vca.asn + " | " + vca.asnNumeric}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                          {vca.organisation}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                          {vca.name}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                          {vca.registry}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                          {vca.registeredCountryName +
+                            " (" +
+                            vca.registeredCountry +
+                            ")"}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                          {vca.totalIpv4Addresses}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                          {vca.rank}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                          {vca.rankText}
+                        </td>
+                      </tr>
                     ))}
                   </tbody>
                 </table>
@@ -230,7 +227,7 @@ const App = () => {
                 Follow @fajriyan
               </a>
               <a
-                class="github-button"
+                className="github-button"
                 href="https://github.com/fajriyan/myip/issues"
                 data-color-scheme="no-preference: dark; light: dark_high_contrast; dark: dark_dimmed;"
                 data-icon="octicon-issue-opened"
