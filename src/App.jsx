@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -16,6 +17,15 @@ const App = () => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>What is my IP | IPVIEW</title>
+        <meta
+          name="description"
+          content="Aplikasi Simple untuk mengetahui IP Public yang digunakan, dan informasi didalamnya"
+        />
+        <link rel="canonical" href="https://ipview.pages.dev/" />
+      </Helmet>
+
       <div className="min-h-screen bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-violet-900 via-indigo-950 to-slate-900">
         <div className="container mx-auto py-7 px-3 md:px-0">
           <div className="md:h-40 bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg flex flex-wrap rounded-md overflow-hidden p-4">
