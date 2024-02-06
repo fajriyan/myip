@@ -1,4 +1,4 @@
-# #3 Project IPVIEW/ MYIP
+# Project IPVIEW/ MYIP
 
 Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (TailwindCSS) dan Library JS (React JS) yang berguna untuk menampilkan IP dan Informasi didalamnya.
 
@@ -11,9 +11,9 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 [![Badges](https://img.shields.io/npm/l/react?style=social)]()
 
 ## Next Update
-- [x] try use solid js [Hold]
-- [ ] use react query
+- [x] try use solid js [not suitable]
 - [x] use template react + vite
+- [ ] use react query
 
 
 
@@ -22,11 +22,7 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 - [x] conflict library
 - [x] error deployment
 
-## How to run it
-
-Untuk menjalankan project ini kalian bisa melakukan dengan 2 cara, sebagai berikut : 
-
-### `Access Here (Online)`
+## Access Here (Online)
 
 Kalian bisa melihat hasil web secara online [disini](https://ipview.pages.dev/).
 
