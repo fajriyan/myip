@@ -31,6 +31,17 @@ Kalian bisa melihat hasil web secara online [disini](https://ipview.pages.dev/).
 - Homepage
   ![image](https://github.com/fajriyan/myip/assets/56616688/875b9afe-0678-4783-ae7f-22fdc7c7ac0d)
 
+## Changelog
+- [1.0.0] release with react js
+- [1.1.0] add carriers and fix mobile view
+- [1.1.5] fix error and delete useless file
+- [1.1.7] verify search console and improve seo
+- [1.1.9] create skeleton loading
+
+
+
+
+
 ## Support
 Project ini tentunya tidak lepas dari berbagai pihak yang telah membantu, oleh karena itu saya menyampaikan banyak 🙏Terimakasih kepada semua pihak yang sudah mendukung project ini sampai live.
 
