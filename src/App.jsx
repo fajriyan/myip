@@ -3,12 +3,15 @@ import { Helmet } from "react-helmet";
 
 const App = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const skeleton = [1, 2, 3];
 
   const getData = async () => {
     const request = await fetch(
       import.meta.env.VITE_URL + import.meta.env.VITE_GHOST
     );
     const response = await request.json();
+    setLoading(false);
     setData(response);
   };
 
@@ -171,40 +174,72 @@ const App = () => {
                   </thead>
 
                   <tbody className="divide-y divide-purple-500">
-                    {data.network?.viaCarriers.map((vca, index) => (
-                      <tr key={Math.random(20)}>
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-900">
-                          {index + 1}
-                        </td>
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                          {vca.asn + " | " + vca.asnNumeric}
-                        </td>
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                          {vca.organisation}
-                        </td>
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                          {vca.name}
-                        </td>
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                          {vca.registry}
-                        </td>
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                          {vca.registeredCountryName +
-                            " (" +
-                            vca.registeredCountry +
-                            ")"}
-                        </td>
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                          {vca.totalIpv4Addresses}
-                        </td>
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                          {vca.rank}
-                        </td>
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                          {vca.rankText}
-                        </td>
-                      </tr>
-                    ))}
+                    {loading
+                      ? skeleton.map((e) => (
+                          <tr key={Math.random(20)} className="animate-pulse">
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-900">
+                              <div class="h-4 bg-gray-300/90 rounded"></div>
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              <div class="h-4 bg-gray-300/90 rounded"></div>
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              <div class="h-4 bg-gray-300/90 rounded"></div>
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              <div class="h-4 bg-gray-300/90 rounded"></div>
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              <div class="h-4 bg-gray-300/90 rounded"></div>
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              <div class="h-4 bg-gray-300/90 rounded"></div>
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              <div class="h-4 bg-gray-300/90 rounded"></div>
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              <div class="h-4 bg-gray-300/90 rounded"></div>
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              <div class="h-4 bg-gray-300/90 rounded"></div>
+                            </td>
+                          </tr>
+                        ))
+                      : data.network?.viaCarriers.map((vca, index) => (
+                          <tr key={Math.random(20)}>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-900">
+                              {index + 1}
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              {vca.asn + " | " + vca.asnNumeric}
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              {vca.organisation}
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              {vca.name}
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              {vca.registry}
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              {vca.registeredCountryName +
+                                " (" +
+                                vca.registeredCountry +
+                                ")"}
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              {vca.totalIpv4Addresses}
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              {vca.rank}
+                            </td>
+                            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                              {vca.rankText}
+                            </td>
+                          </tr>
+                        ))}
                   </tbody>
                 </table>
               </div>
