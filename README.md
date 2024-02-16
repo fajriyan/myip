@@ -1,4 +1,4 @@
-# #3 Project IPVIEW/ MYIP
+# Project IPVIEW/ MYIP
 
 Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (TailwindCSS) dan Library JS (React JS) yang berguna untuk menampilkan IP dan Informasi didalamnya.
 
@@ -11,31 +11,21 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 [![Badges](https://img.shields.io/npm/l/react?style=social)]()
 
 ## Next Update
-- [x] try use solid js [Hold]
-- [ ] use react query
+- [x] try use solid js [not suitable]
 - [x] use template react + vite
+- [ ] use react query
 
 
 
 ## Issue
-- [ ] Public API Broken
+- [x] Public API Broken
 - [x] conflict library
 - [x] error deployment
 
-## How to run it
-
-Untuk menjalankan project ini kalian bisa melakukan dengan 2 cara, sebagai berikut : 
-
-### `Access Here (Online)`
+## Access Here (Online)
 
 Kalian bisa melihat hasil web secara online [disini](https://ipview.pages.dev/).
 
-
-### `Download Project (Run Offline)`
-
-1. Kalian bisa Download Kemudian Bisa Run Secara `offline` dengan langsung melakukan download project [disini](https://github.com/fajriyan/myip.git), atau clone dengan ``git clone https://github.com/fajriyan/myip.git``.
-2. Kemudian kalian bisa jalankan Tailwind CSS dengan perintah ``npx tailwindcss -i ./src/input.css -o ./output.css --watch`` pada Terminal VSCODE kalian.
-3. Lakukan Edit Sesuka kalian.
 
 ## Screenshot
 - Homepage
