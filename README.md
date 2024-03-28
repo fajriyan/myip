@@ -12,8 +12,7 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 
 ## Next Update
 - [x] try use solid js [not suitable]
-- [x] use template react + vite
-- [ ] use react query
+- [x] use template react + vite js
 
 
 
