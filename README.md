@@ -13,7 +13,7 @@ Project ini adalah sebuah project kecil dengan hanya menggunakan HTML, CSS (Tail
 ## Next Update
 - [x] try use solid js [not suitable]
 - [x] use template react + vite js
-
+- [ ] create light & dark mode
 
 
 ## Issue
