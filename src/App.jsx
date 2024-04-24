@@ -33,9 +33,9 @@ const App = () => {
         <div className="container mx-auto py-7 px-3 md:px-0">
           <div className="md:h-40 bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg flex flex-wrap rounded-md overflow-hidden p-4">
             <div className="w-[100%] md:w-[60%]">
-              <h1>What is my IP address?</h1>
+              <h1>Apa IP Address Publik saya?</h1>
               <p className="text-3xl font-bold">
-                {data.ip || "API Error | 404"}
+                {data.ip || "Loading IP Address.."}
               </p>
               <div className="mt-3">
                 <h2>Lokasi Sekarang :</h2>
@@ -49,7 +49,7 @@ const App = () => {
               </div>
             </div>
             <div className="w-[100%] mt-4 md:mt-0 md:w-[40%]">
-              <h2 className="font-medium">Network Used</h2>
+              <h2 className="font-medium">Jaringan yang Digunakan</h2>
               <div className="">
                 <div className="flex gap-2">
                   Registry :<p>{data.network?.registry || "undefined"}</p>
